@@ -1,0 +1,18 @@
+syntax = "v1"
+
+info(
+	title: "web file management"
+	desc: "web file management"
+	version: "v1.0"
+)
+
+import "../base.api"
+
+@server(
+	group: web
+)
+service Fms {
+    // Download file | 下载文件
+	@handler downloadFile
+	get /file/webdownload/:id (UUIDPathReq)
+}
